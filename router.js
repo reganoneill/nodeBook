@@ -2,10 +2,10 @@
 
 const reqRouter = require('./requestHandlers.js');
 
-function route(handle, pathname, response){
+function route(handle, pathname, response, postDataBody){
   console.log(`About to route a request for ${pathname}`);
   if(typeof handle[pathname] === 'function'){
-     handle[pathname](response);
+     handle[pathname](response, postDataBody);
   } else {
     console.log(`No request handler found for ${pathname}`);
     response.writeHead(400, {
