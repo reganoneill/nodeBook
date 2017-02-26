@@ -1,6 +1,6 @@
 'use strict';
 
-var exec = require("child_process").exec;
+var querystring = require("querystring");
 
 function start(response, postDataBody){
   console.log("Request handler 'start' was called.");
@@ -29,7 +29,7 @@ function start(response, postDataBody){
 function upload(response, postDataBody){
   console.log("Request handler 'upload' was called.");
   response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("You've sent: " + postDataBody);
+  response.write("You've sent the TEXT: " + querystring.parse(postDataBody).text);
   response.end();
 }
 
