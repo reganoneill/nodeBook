@@ -16,8 +16,9 @@
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-###Local Files###
+###Local Files and Directories###
 data/
+tmp/
 
 ### Node ###
 # Logs
