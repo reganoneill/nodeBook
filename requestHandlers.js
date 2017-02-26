@@ -1,11 +1,10 @@
 'use strict';
 
 var querystring = require("querystring");
+const fs = require('fs');
 
 function start(response, postDataBody){
   console.log("Request handler 'start' was called.");
-
-
   var body =
   '<html>'+
      '<head>'+
@@ -13,9 +12,10 @@ function start(response, postDataBody){
      'charset=UTF-8" />'+
      '</head>'+
      '<body>'+
-       '<form action="/upload" method="post">'+
+       '<form action="/upload" enctype="multipart/form-data" method="post">'+
          '<textarea name="text" rows="20" cols="60"></textarea>'+
-         '<input type="submit" value="Submit text" />'+
+         '<input type="file" name="upload">' +
+         '<input type="submit" value="Upload file" />'+
        '</form>'+
      '</body>'+
    '</html>';
@@ -23,7 +23,6 @@ function start(response, postDataBody){
     response.writeHead(200, {"Content-Type": "text/html"});
     response.write(body);
     response.end();
-
 }
 
 function upload(response, postDataBody){
@@ -33,5 +32,12 @@ function upload(response, postDataBody){
   response.end();
 }
 
+function show(response){
+  console.log("Request handler 'show' was called.");
+  response.writeHead(200, {"Content-Type": "image.png"});
+  fs.createReadStream(`${__dirname}/data/fun-giraffe.png`).pipe(response);
+}
+
 exports.start = start;
 exports.upload = upload;
+exports.show = show;
