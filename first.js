@@ -8,8 +8,7 @@ console.log('Here is the process.argv:',process.argv);
 
 var nums = process.argv.slice(2);
 
-console.log(nums);
-
+//solution 1
 var addFunc = function(array){
  console.log('our argument array:', array);
  var adder = 0;
@@ -19,3 +18,11 @@ var addFunc = function(array){
  console.log(adder, 'is the result');
 };
 addFunc(nums);
+//end solution 1
+
+//solution 2
+var sol2 = nums.reduce(function(total, i){
+  total += parseInt(i);
+  return total;
+},0);
+console.log(sol2);
