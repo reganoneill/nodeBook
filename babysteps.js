@@ -4,8 +4,6 @@
 
 // write a function which accepts an array as an argument. it will cut the first two indexes off the array (because those two indexes are unneeded in process.argv) then form an expression to evaluate sum of numbers.
 
-console.log('Here is the process.argv:',process.argv);
-
 var nums = process.argv.slice(2);
 
 //solution 1
@@ -18,7 +16,7 @@ var addFunc = function(array){
  console.log(adder, 'is the result');
 };
 addFunc(nums);
-//end solution 1
+
 
 //solution 2
 var sol2 = nums.reduce(function(total, i){
