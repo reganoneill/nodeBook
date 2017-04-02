@@ -7,15 +7,15 @@
 var nums = process.argv.slice(2);
 
 //solution 1
-var addFunc = function(array){
- console.log('our argument array:', array);
- var adder = 0;
- for(var x = 0; x <= array.length -1 ; x++){
-   adder += parseInt(array[x]);
- }
- console.log(adder, 'is the result');
-};
-addFunc(nums);
+// var addFunc = function(array){
+//  console.log('our argument array:', array);
+//  var adder = 0;
+//  for(var x = 0; x <= array.length -1 ; x++){
+//    adder += parseInt(array[x]);
+//  }
+//  console.log(adder, 'is the result');
+// };
+// addFunc(nums);
 
 
 //solution 2

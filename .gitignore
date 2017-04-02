@@ -19,6 +19,7 @@
 ###Local Files and Directories###
 data/
 tmp/
+testDir
 
 ### Node ###
 # Logs
