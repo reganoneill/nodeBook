@@ -4,6 +4,7 @@
 //
 // The full path to the file to read will be provided as the first
 // command-line argument.
+'use strict';
 
 const fs = require('fs');
 const filename = process.argv[2];
