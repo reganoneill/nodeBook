@@ -36,4 +36,5 @@ const magicReader = function(directory, extension){
 	});
 };
 
+//test
 magicReader(readDir, takeExt);
