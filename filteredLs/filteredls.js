@@ -30,7 +30,7 @@ const magicReader = function(directory, extension){
 			}
 		});
 		wantedFiles.forEach( file => {
-			console.log(file);
+			console.log(file, '<-- file');
 			return file;
 		})
 	});
