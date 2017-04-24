@@ -17,12 +17,12 @@
 
 const fs = require('fs');
 const path = require('path');
-const fileArg = process.argv[2];
+const dirArg = process.argv[2];
 const onlyThisExt = '.' + process.argv[3];
 
 
-var readFilterPrint = function (fileArg, onlyThisExt){
-  fs.readdir(fileArg, 'utf-8', (err, files) => {
+var readFilterPrint = function(dirArg, onlyThisExt){
+  fs.readdir(dirArg, 'utf-8', (err, files) => {
     files.forEach( ele => {
       if(path.extname(ele) == onlyThisExt){
         console.log(ele);
@@ -30,4 +30,4 @@ var readFilterPrint = function (fileArg, onlyThisExt){
     })
   })
 };
-readFilterPrint(fileArg, onlyThisExt);
+readFilterPrint(dirArg, onlyThisExt);
