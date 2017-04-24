@@ -42,22 +42,16 @@
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+
 const dirArg = process.argv[2];
-const onlyThisExt = '.' + process.argv[3];
+const onlyThisExt = process.argv[3];
 
 const helper = require('./makeItModularHelper.js');
 
-const worker = function(){
-  fs.readdir(dirArg, 'utf-8', (err, files) => {
-  files.forEach( ele => {
-    if(path.extname(ele) == onlyThisExt){
-      console.log(ele);
-      }
-    })
+helper(dirArg, onlyThisExt, function(err, list){
+  if(err) return err.message;
+  list.forEach(x => {
+    console.log(x);
   });
-};
 
-
-helper(dirArg, onlyThisExt, worker);
+});
