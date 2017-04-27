@@ -20,7 +20,7 @@ const server = net.createServer( c => {
 	const fullHours = date.getHours();
 	const fullMinutes = date.getMinutes();
  c.write(
- 					zeroFill(fullYear)
+ 					 zeroFill(fullYear)
 	 + '-' + zeroFill(fullMonth + 1)
 	 + '-' + zeroFill(fullDate)
 	 + ' ' + zeroFill(fullHours)
