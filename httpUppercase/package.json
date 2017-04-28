@@ -1,0 +1,15 @@
+{
+  "name": "httpUppercase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "uppercase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "through2-map": "^3.0.0"
+  }
+}
